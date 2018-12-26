@@ -1,4 +1,4 @@
-# wp-theme-downloader 
+=== WP Theme Downloader ===
 Contributors: Bhupender Singh
 Tags: download, theme, zip, dashboard, theme, themes, download-theme, download-theme-zip, theme-zip, download, zip, wordpress, admin, theme-downloader
 Requires at least: 3.1
