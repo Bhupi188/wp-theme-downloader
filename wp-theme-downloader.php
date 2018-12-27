@@ -8,9 +8,9 @@
  * Text Domain: wp-theme-downloader
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Description: WordPress Login, registration and forgot password pages design change according to your theme.
+ * Description: Download any themes ZIP files directly from your admin dashboard without using FTP by just one click!.
  *
- * Compatible with WordPress 4.6 through 4.9+.
+ * Compatible with WordPress 4.6 through 5.0.2+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
@@ -43,6 +43,15 @@ if ( ! defined( 'WP_THEME_DOWNLOADER_PATH' ) ) {
 	define( 'WP_THEME_DOWNLOADER_PATH', dirname( __FILE__ ) );
 }
 
+if ( ! defined( 'WP_THEME_DOWNLOADER_URL' ) ) {
+	define( 'WP_THEME_DOWNLOADER_URL', plugin_dir_url( __FILE__ ) );
+}
+
+if ( ! defined( 'WP_THEME_DOWNLOADER_PREFIX' ) ) {
+	define( 'WP_THEME_DOWNLOADER_PREFIX', 'wptd_' );
+}
+
+
 class b2s_WpThemeDownloader {
 
 	/**
@@ -73,8 +82,8 @@ class b2s_WpThemeDownloader {
 	 */
 	public static function init() {
 		// Require a few needed files
-		//require_once( WP_LOGIN_THEME_PATH . '/inc/class-wp-login-theme.php' );
-		//add_action( 'plugins_loaded', array( __CLASS__, 'do_init' ) );
+		require_once( WP_THEME_DOWNLOADER_PATH . '/includes/class-wp-theme-downloader.php' );
+		add_action( 'plugins_loaded', array( __CLASS__, 'do_init' ) );
 	}
 
 	/**
